@@ -2,8 +2,7 @@ import { useState } from "react"
 import { LuSend } from "react-icons/lu";
 
 export function ChatInput(props) {
-    const [input, setInput] = useState("")
-
+    const [input, setInput] = useState("");
 
     function handleSubmit(e) {
         props.sendMsg(input);

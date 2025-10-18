@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { ChatInput } from "./ChatInput";
 import { MessageList } from "./MessageList";
+import axios from "axios";
 
 export function ChatWindow() {
     const [messages, setMessages] = useState([]);
 
-    const sendMsg = (msg) => {
+    const sendMsg = async (msg) => {
         if(!msg.trim()) return;
 
         const newMsg = { 
@@ -14,17 +15,14 @@ export function ChatWindow() {
             id: Date.now() 
         };
         setMessages(messages => [...messages, newMsg]);
-
-        setTimeout(() => {
-        const botMsg = { 
-            role: "model1", 
-            parts: ["Hello, I got your message!"], 
-            id: Date.now() + 1 // Unique key/id for the bot
-        };
+        const resp = await axios.post("http://localhost:5000/api/chat", { message: msg });
         
-        // 3. Add Bot Message, also using functional update
-        setMessages(prevMessages => [...prevMessages, botMsg]);
-    }, 1200);
+        const botMsg = { 
+            role: "bot", 
+            parts: [resp.data.message],
+            id: Date.now() + 1 
+        };
+        setMessages(messages => [...messages, botMsg]);
     }
 
     return (
