@@ -1,20 +1,10 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
 import './App.css';
+import { ChatWindow } from './components/ChatWindow';
 
 function App() {
-    const [message, setMessage] = useState("");
-
-    useEffect(() => {
-        axios.get("http://localhost:5000/api/hello")
-        .then((res) => setMessage(res.data.message))
-        .catch((err) => console.error(err));
-        });
-
     return (
-        <div className="App">
-            <h1>Welcome to the Frontend</h1>
-            <p>{message}</p>
+        <div className="App bg-primary h-screen flex items-center justify-center">
+            <ChatWindow />
         </div>
     );
 }
