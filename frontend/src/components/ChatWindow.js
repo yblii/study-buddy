@@ -5,8 +5,10 @@ import axios from "axios";
 
 export function ChatWindow() {
     const [messages, setMessages] = useState([]);
+    const [isThinking, setThinking] = useState(false);
 
     const sendMsg = async (msg) => {
+        setThinking(true);
         if(!msg.trim()) return;
 
         const newMsg = { 
@@ -15,19 +17,26 @@ export function ChatWindow() {
             id: Date.now() 
         };
         setMessages(messages => [...messages, newMsg]);
-        const resp = await axios.post("http://localhost:5000/api/chat", { message: msg });
-        
-        const botMsg = { 
-            role: "bot", 
-            parts: [resp.data.message],
-            id: Date.now() + 1 
-        };
-        setMessages(messages => [...messages, botMsg]);
+
+        try {
+            const resp = await axios.post("http://localhost:5000/api/chat", { message: msg });
+            
+            const botMsg = { 
+                role: "bot", 
+                parts: [resp.data.message],
+                id: Date.now() + 1 
+            };
+            setMessages(messages => [...messages, botMsg]);
+        } catch (error) { 
+            console.error("Error sending message:", error);
+        } finally {
+            setThinking(false);
+        }
     }
 
     return (
-        <div className="bg-secondary p-6 h-4/5 w-2/5 rounded-lg">
-            <MessageList messages={messages} />
+        <div className="bg-secondary p-6 h-5/6 w-2/5 rounded-lg flex flex-col justify-between gap-3">
+            <MessageList messages={messages} isThinking={isThinking}/>
             <ChatInput sendMsg={sendMsg} />
         </div>
     );

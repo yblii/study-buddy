@@ -13,7 +13,7 @@ export function ChatInput(props) {
         <div className="input-bar w-full flex gap-4 justify-center">
             <input 
                 type="text" placeholder="type here..." 
-                className="p-2 rounded w-4/5"
+                className="p-2 rounded-lg w-full"
                 value={input} 
                 onChange={(e) => setInput(e.target.value)}
                 onSubmit={handleSubmit}>
