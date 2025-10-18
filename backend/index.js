@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY , thinkingBudget: 0});
 
 app.get("/api/hello", (req, res) => {
   res.json({ message: "Hello, World!" });
@@ -18,17 +18,12 @@ app.get("/api/hello", (req, res) => {
 app.post("/api/chat", async (req, res) => {
   try {
     const { chatHistory, userMessage } = req.body;
-
-    chatHistory.push({
-      role: "user",
-      parts: [{ text: userMessage }]
-    });
-
-    const response = await ai.models.generateContent({
+    const chat = ai.chats.create({
       model: "gemini-2.5-flash",
-      contents: history,
-      thinkingBudget: 0
-    });
+      history: chatHistory,
+    })
+
+    const response = await chat.sendMessage(userMessage);
 
     res.json({message: response.text});
   } catch (error) {
