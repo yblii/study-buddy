@@ -1,7 +1,7 @@
 export function TextBubble(props) {
     let classes = "";
     if(props.isUser) {
-        classes = "justify-self-end bg-primary text-right rounded-br-none"; 
+        classes = "justify-self-end bg-primary text-white text-right rounded-br-none"; 
     } else {
         classes = "justify-self-start bg-white text-left rounded-bl-none"; 
     }

@@ -34,15 +34,19 @@ export function AnalyticsPage() {
     }
 
     useEffect(() => {
+
         fetchAnalytics();
     }, []);
 
     return (
-        <div className="analytics-page grid grid-cols-5">
-            <div className="col-span-2 h-full flex justify-center items-center">
+        <div className="analytics-page h-screen w-screen flex justify-between p-20 gap-20">
+            <div className="flex-3"> 
                 <AnalyticsDucky />
             </div>
-            {isLoading ? (
+            
+            <div className="flex-1">
+                <div className="h-full p-6 flex flex-col justify-between gap-3 z-10">
+                    {isLoading ? (
                 <p>Loading analytics...</p>
             ) : (
                 analytics ? (
@@ -63,6 +67,11 @@ export function AnalyticsPage() {
                     <p>No analytics data available.</p>
                 )
             )}
+                </div>
+
+                
+            </div>
+            
         </div>
     );
 }
