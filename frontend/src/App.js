@@ -1,13 +1,18 @@
 import './App.css';
-import { ChatWindow } from './components/ChatWindow';
+import { ChatPage } from './pages/ChatPage';
+import { AnalyticsPage } from './pages/AnalyticsPage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
     return (
-        <div className="App bg-bg bg-repeat bg-contain h-screen flex items-center 
-            justify-center">
-            <ChatWindow />
-            <div className='backdrop-saturate-[.85]  absolute top-0 left-0 w-full h-full'>
-            </div>
+        <div>
+
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<ChatPage />} />
+                    <Route path='/analytics' element={<AnalyticsPage />} />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }

@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import { GoogleGenAI } from '@google/genai';
 import dotenv from 'dotenv';
-import bodyParser from 'body-parser';
 
 dotenv.config();
 
@@ -19,7 +18,7 @@ app.get("/api/hello", (req, res) => {
 app.post("/api/chat", async (req, res) => {
   try {
     const { chatHistory, userMessage } = req.body;
-    
+
     const chat = ai.chats.create({
         model: "gemini-2.5-flash",
         history: chatHistory
