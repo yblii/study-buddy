@@ -9,26 +9,23 @@ export function ChatPage() {
     const {passedDuck} = location.state || "Ducky";
 
     return (
-        <div className="h-screen flex gap-x-20 items-center justify-center w-3/4">
-              
-     
-            <Ducky name={passedDuck}/> 
-            <ChatWindow setHistory={setChatHistory}/>
+        <div className="h-screen w-screen grid grid-flow grid-cols-5 items-end justify-items-stretch p-20">
+            <div className="col-span-2 h-full"> 
+                <Ducky name={passedDuck}/> 
+            </div>
+            <div className="col-span-3 h-full">
+                <ChatWindow setHistory={setChatHistory}/>
 
+                <Link to="/analytics" className="absolute top-4 right-4 bg-white bg-opacity-70 hover:bg-opacity-90 
+                    text-gray-800 font-semibold py-2 px-4 rounded shadow" state={{ history: chatHistory }}>
+                    Analytics
+                </Link>
 
-            <Link to="/analytics" className="absolute top-4 right-4 bg-white bg-opacity-70 hover:bg-opacity-90 
-                text-gray-800 font-semibold py-2 px-4 rounded shadow" state={{ history: chatHistory }}>
-                Analytics
-            </Link>
-
-            <Link to="/new" className="absolute top-4 left-4 bg-white bg-opacity-70 hover:bg-opacity-90 
-                text-gray-800 font-semibold py-2 px-4 rounded shadow">
-                New
-            </Link>
-            
+                <Link to="/new" className="absolute top-4 left-4 bg-white bg-opacity-70 hover:bg-opacity-90 
+                    text-gray-800 font-semibold py-2 px-4 rounded shadow">
+                    New
+                </Link>
+            </div>
         </div>
-
-
-
     );
 }
