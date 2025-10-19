@@ -2,7 +2,6 @@ import duck from '../../assets/duck_placeholder.jpg'
 
 export function Ducky ({name}) {
   return (
-
     <div className="flex flex-col items-center my-4 gap-4">
       <img
         src={duck}

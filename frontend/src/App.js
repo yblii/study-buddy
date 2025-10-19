@@ -6,8 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
     return (
-        <div className="bg-bg bg-repeat bg-auto h-screen flex items-center 
-                justify-center">
+        <div className="bg-bg bg-repeat bg-auto h-screen w-screen">
             <div className='pointer-events-none absolute backdrop-saturate-[.9] backdrop-brightness-[.9] top-0 left-0 w-full h-full'></div>
 
             <BrowserRouter>
