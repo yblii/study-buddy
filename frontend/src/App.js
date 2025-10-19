@@ -1,12 +1,11 @@
 import './App.css';
-import { ChatPage } from './pages/ChatPage';
-import { AnalyticsPage } from './pages/AnalyticsPage';
+import { ChatPage } from './components/chat_page/ChatPage';
+import { AnalyticsPage } from './components/analytics_page/AnalyticsPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
     return (
         <div>
-
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<ChatPage />} />

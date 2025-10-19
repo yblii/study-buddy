@@ -1,7 +1,6 @@
 import { TextBubble } from "./TextBubble";
 
 export function MessageList(props) {
-    console.log(props.isThinking)
     return (
         <div className="flex-col pb-3 w-full overflow-y-auto scrollbar scrollbar-thumb-primary scrollbar-track-secondary">
             {props.messages.map((msg) => (

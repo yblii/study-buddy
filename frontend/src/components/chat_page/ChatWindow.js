@@ -3,7 +3,7 @@ import { ChatInput } from "./ChatInput";
 import { MessageList } from "./MessageList";
 import axios from "axios";
 
-export function ChatWindow() {
+export function ChatWindow({ setHistory }) {
     const [messages, setMessages] = useState([]);
     const [isThinking, setThinking] = useState(false);
 
@@ -19,7 +19,7 @@ export function ChatWindow() {
         setMessages(messages => [...messages, newMsg]);
 
         try {
-            const resp = await axios.post("http://localhost:5000/api/chat", 
+            const resp = await axios.post("http://localhost:8080/api/chat", 
                 { 
                     chatHistory: messages.map(m => (
                         { 
@@ -36,6 +36,7 @@ export function ChatWindow() {
                 id: Date.now() + 1 
             };
             setMessages(messages => [...messages, botMsg]);
+            setHistory([...messages, newMsg, botMsg]);
         } catch (error) { 
             console.error("Error sending message:", error);
         } finally {

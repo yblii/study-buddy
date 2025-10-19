@@ -4,8 +4,6 @@ import { GoogleGenAI, Type } from '@google/genai';
 import Dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 
-dotenv.config();
-
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -38,11 +36,11 @@ app.post("/api/chat", async (req, res) => {
 
 app.post("/api/analyze", async (req, res) => {
   try {
-    const { chat_history } = req.body;
+    const { chatHistory } = req.body;
 
     const prompt = `
     You are an expert exam tutor and learning analyst.
-    Analyze the entire conversation between the student and the tutor agent.
+    Analyze this entire conversation between the student and the tutor agent.
     The student is explaining a topic in as much detail as they can, and you, the tutor agent is asking increasingly complex questions to reveal the student’s knowledge gaps and uncertainty.
 
     Your task now is to:
@@ -54,18 +52,14 @@ app.post("/api/analyze", async (req, res) => {
       - Pay close attention to whether they can handle more advanced questions.
     2. Based on this analysis, estimate the student's final understanding percentage (0–100).
       - Consider both content accuracy and confidence as reflected in their language and ability to handle deeper questions.
-    3. Identify the understood concepts, uncertain concepts, missing concepts throughout this entire chat history
+    3. Identify THREE of the student's most understood concepts, uncertain concepts, and incorrect concepts throughout this entire chat history
     4. Generate targeted study recommendations that highlight uncertain and missing concepts, prioritizing the most critical topics for exam or midterm readiness. These recommendations should clearly outline the key areas students need to focus on, provide guiding questions to deepen understanding, and offer a structured path for efficient review.
 
     Important:
     - Respond ONLY in valid JSON.
     - Do not include commentary, explanations, or markdown outside of the JSON structure.
+    - Keep each point as concise as possible.
     `;
-
-    chat_history.push({
-      role: "user",
-      parts: [{ text: prompt }]
-    });
 
     const format = {
       responseMimeType: "application/json",
@@ -77,7 +71,7 @@ app.post("/api/analyze", async (req, res) => {
           understanding_percentage: { type: Type.NUMBER },
           understood_concepts: { type: Type.ARRAY, items: { type: Type.STRING } },
           uncertain_concepts: { type: Type.ARRAY, items: { type: Type.STRING } },
-          missing_concepts: { type: Type.ARRAY, items: { type: Type.STRING } },
+          incorrect_concepts: { type: Type.ARRAY, items: { type: Type.STRING } },
           study_recommendations: { type: Type.ARRAY, items: { type: Type.STRING } }
         },
         propertyOrdering: [
@@ -86,21 +80,21 @@ app.post("/api/analyze", async (req, res) => {
           "understanding_percentage",
           "understood_concepts",
           "uncertain_concepts",
-          "missing_concepts",
+          "incorrect_concepts",
           "study_recommendations"
         ]
       }
     }
 
-    const analysis = await ai.models.generateContent({
+    const chat = ai.chats.create({
         model: "gemini-2.5-flash", 
-        contents: prompt, 
+        history: chatHistory, 
         thinkingBudget: 0, 
         config: format,
       });
     
-    const response = analysis.text;
-    res.json(JSON.parse(response));
+    const response = await chat.sendMessage({message: prompt});
+    res.json(response.text);
   } catch (error) {
     console.error(error);
     res.status(500).json({error: "Something went wrong. :( "});
