@@ -23,7 +23,7 @@ export function ChatWindow({ setHistory, topic, educationLevel, chatLog }) {
         setMessages(messages => [...messages, newMsg]);
 
         try {
-            const resp = await axios.post("http://localhost:8080/api/chat", 
+            const resp = await axios.post("https://study-ducky.onrender.com/api/chat", 
                 { 
                     chatHistory: messages.map(m => (
                         { 

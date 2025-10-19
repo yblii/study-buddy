@@ -15,7 +15,7 @@ export function AnalyticsPage() {
     const fetchAnalytics = async () => {
         if(isLoading){
             try {
-                const resp = await axios.post("http://localhost:8080/api/analyze", 
+                const resp = await axios.post("https://study-ducky.onrender.com/api/analyze", 
                     {
                         chatHistory: history.map(m => (
                             { 
