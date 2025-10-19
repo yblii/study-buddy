@@ -3,6 +3,7 @@ import { useAuth } from "../authentication/AuthContext";
 import { db } from "../../firebase/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { Link } from "react-router-dom";
+import { ChatButton } from "./ChatButton";
 
 export function HomePage() {
     const { currentUser } = useAuth();
@@ -34,11 +35,19 @@ export function HomePage() {
     }, []);
 
     return (
-        <div>
-            
-            <Link to="/" className="absolute top-4 left-4 bg-white bg-opacity-70 hover:bg-opacity-90 
-                    text-gray-800 font-semibold py-2 px-4 rounded shadow">
-                    New
+        <div className="h-full flex flex-col justify-center items-center gap-4">
+            <h1 className="text-4xl font-bold">PREVIOUS CHATS</h1>
+            <div className="w-2/5 h-3/5 flex flex-col gap-4 overflow-y p-4 scrollbar overflow-y-auto 
+                scrollbar-thumb-secondary scrollbar-track-primary">
+                {chats ? (
+                        chats.map((chat) => {
+                            return <ChatButton chatData={chat}/>
+                        })
+                ) : ( <p>Loading Chats...</p> )}
+            </div>
+            <Link to="/" className="top-4 left-4 bg-white border-white border-4 bg-opacity-70 hover:bg-opacity-90 
+                    text-gray-800 font-semibold text-center text-2xl w-1/3 py-2 px-4 rounded shadow">
+                    NEW CHAT
             </Link>
         </div>
     )

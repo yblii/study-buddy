@@ -9,6 +9,7 @@ module.exports = {
             'primary': '#4dbcb8ff',
             'secondary': '#faeb6dff',
             'textp': '#383535ff',
+            'textsec': '#514949ff',
             'bcolor': '#dfcd76ff',
         },
         fontFamily: {

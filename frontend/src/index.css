@@ -6,6 +6,10 @@
     @apply text-textp;
 }
 
+.chat-btn-section h1 {
+    @appy text-lg font-bold inline;
+}
+
 button {
     @apply p-2 rounded-lg bg-primary border-4 border-black/20 font-bold text-white;
 }
