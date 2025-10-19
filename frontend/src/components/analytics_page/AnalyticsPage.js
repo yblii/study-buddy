@@ -46,8 +46,6 @@ export function AnalyticsPage() {
                 <p>Loading analytics...</p>
             ) : (
                 analytics ? (
-                    console.log(analytics),
-                    console.log(analytics.understood_concepts),
                     <div className="grid grid-cols-2 grid-rows-6 gap-4 p-6 col-span-3">
                         <AnalyticBlock title="OVERALL UNDERSTANDING" content={analytics.understanding_percentage + "%"}
                             classes="col-span-2" />

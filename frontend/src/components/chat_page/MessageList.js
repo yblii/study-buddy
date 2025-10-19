@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { TextBubble } from "./TextBubble";
-import { RandomDuck } from "./RandomDuck";
 
 export function MessageList(props) {
     let messagesEnd = null;

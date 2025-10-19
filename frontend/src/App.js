@@ -9,7 +9,7 @@ function App() {
         <div className="bg-bg bg-repeat bg-auto h-screen w-screen">
             <BrowserRouter>
                 <Routes>
-                    <Route path='/chat' element={<ChatPage />} />
+                    <Route path='/chat/:chatId' element={<ChatPage />} />
                     <Route path='/analytics' element={<AnalyticsPage />} />
                     <Route path='/' element={<CreationPage />}/>
                 </Routes>
