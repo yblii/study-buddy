@@ -1,17 +1,23 @@
 import { ChatWindow } from "./ChatWindow";
 import { Link, useLocation } from "react-router-dom";
-import React from "react";
-import { Ducky } from "../creation_page/Ducky";
+import React, {useState} from "react";
+import { RandomDuck } from "./RandomDuck";
 
 export function ChatPage() { 
     const [chatHistory, setChatHistory] = React.useState();
+    const [duckIndex, setDuckIndex] = useState(0); 
+
     const location = useLocation();
     const {passedDuck} = location.state || "Ducky";
+
+    const handleDuckChange = () => {
+        setDuckIndex(Math.floor(Math.random() * 4));
+    };
 
     return (
         <div className="h-screen w-screen grid grid-flow grid-cols-5 items-end justify-items-stretch p-20">
             <div className="col-span-2 h-full"> 
-                <Ducky name={passedDuck}/> 
+                <RandomDuck duckIndex={duckIndex} duckName={passedDuck} />
             </div>
             <div className="col-span-3 h-full">
                 <ChatWindow setHistory={setChatHistory}/>

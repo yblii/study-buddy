@@ -1,4 +1,5 @@
 import { TextBubble } from "./TextBubble";
+import { RandomDuck } from "./RandomDuck";
 
 export function MessageList(props) {
     return (

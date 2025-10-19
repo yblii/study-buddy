@@ -1,4 +1,4 @@
-import duck from '../../assets/duck_placeholder.jpg'
+import duck from '../../assets/ducks/duck_base.png';
 
 export function Ducky ({name}) {
   return (
@@ -6,7 +6,7 @@ export function Ducky ({name}) {
       <img
         src={duck}
         alt="Duck"
-        className="w-80 h-80 object-cover"
+        className="w-80 h-100 object-contain"
       />
       {name != "" && (
         <p className="mt-2 text-lg font-semibold text-gray-800 p-4 rounded-lg bg-white" >
@@ -14,6 +14,6 @@ export function Ducky ({name}) {
         </p>
       )}
     </div>
-  );
+  );  
 
 };
