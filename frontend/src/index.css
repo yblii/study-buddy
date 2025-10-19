@@ -6,6 +6,10 @@
     @apply text-textp;
 }
 
+.text-shadow {
+    text-shadow: 0px 3px 10px #302f2d44;
+}
+
 .chat-btn-section h1 {
     @appy text-lg font-bold inline;
 }

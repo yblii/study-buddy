@@ -36,7 +36,7 @@ export function HomePage() {
 
     return (
         <div className="h-full flex flex-col justify-center items-center gap-4">
-            <h1 className="text-4xl font-bold">PREVIOUS CHATS</h1>
+            <h1 className="text-4xl font-bold text-shadow">PREVIOUS CHATS</h1>
             <div className="w-2/5 h-3/5 flex flex-col gap-4 overflow-y p-4 scrollbar overflow-y-auto 
                 scrollbar-thumb-secondary scrollbar-track-primary">
                 {chats ? (
