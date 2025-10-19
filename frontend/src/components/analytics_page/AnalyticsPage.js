@@ -15,7 +15,7 @@ export function AnalyticsPage() {
     const fetchAnalytics = async () => {
         if(isLoading){
             try {
-                const resp = await axios.post("/api/analyze", 
+                const resp = await axios.post("http://localhost:8080/api/analyze", 
                     {
                         chatHistory: history.map(m => (
                             { 
@@ -34,7 +34,6 @@ export function AnalyticsPage() {
     }
 
     useEffect(() => {
-
         fetchAnalytics();
     }, []);
 
