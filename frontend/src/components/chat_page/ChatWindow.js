@@ -3,8 +3,14 @@ import { ChatInput } from "./ChatInput";
 import { MessageList } from "./MessageList";
 import axios from "axios";
 
-export function ChatWindow({ setHistory }) {
-    const [messages, setMessages] = useState([]);
+export function ChatWindow({ setHistory, name, topic, educationLevel }) {
+    const [messages, setMessages] = useState([
+        { 
+            role: "model", 
+            text: `Hi! I'm your study buddy ${name}, let's get started!`, 
+            id: 0 
+        },
+    ]);
     const [isThinking, setThinking] = useState(false);
 
     const sendMsg = async (msg) => {
@@ -27,7 +33,9 @@ export function ChatWindow({ setHistory }) {
                             parts: [{ text: m.text }]
                         }
                     )),
-                    userMessage: msg
+                    userMessage: msg,
+                    topic: topic,
+                    educationLevel: educationLevel
                 });
             
             const botMsg = { 
@@ -45,8 +53,8 @@ export function ChatWindow({ setHistory }) {
     }
 
     return (
-        <div className="bg-secondary h-full p-6 rounded-lg flex flex-col justify-between gap-3 z-10
-                ring-white ring-8 shadow-xl">
+        <div className="h-full bg-secondary p-6 rounded-lg flex flex-col justify-between gap-3 z-10
+                ring-bcolor ring-8 shadow-xl">
             <MessageList messages={messages} isThinking={isThinking}/>
             <ChatInput sendMsg={sendMsg} />
         </div>
