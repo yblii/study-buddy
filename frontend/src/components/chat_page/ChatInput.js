@@ -9,6 +9,12 @@ export function ChatInput(props) {
         setInput("");
     }
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
+  };
+
     return (
         <div className="input-bar w-full flex gap-4 justify-center">
             <input 
@@ -16,6 +22,7 @@ export function ChatInput(props) {
                 className="p-2 rounded-lg w-full"
                 value={input} 
                 onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleKeyPress}
                 onSubmit={handleSubmit}>
             </input>
             <button className="p-2 rounded bg-primary border-2 border-black/20" onClick={handleSubmit}>
