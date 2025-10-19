@@ -43,7 +43,7 @@ export function SignUpPage() {
                         CREATE ACCOUNT
                     </button>
                 </form>
-                <Link className="text-left w-full text-textp font-bold" to='/login'>Login</Link>
+                <Link className="text-left w-full text-textp font-bold" to='/'>Login</Link>
             </div>
         </div>
     )

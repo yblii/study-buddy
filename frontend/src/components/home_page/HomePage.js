@@ -45,7 +45,7 @@ export function HomePage() {
                         })
                 ) : ( <p>Loading Chats...</p> )}
             </div>
-            <Link to="/" className="top-4 left-4 bg-white border-white border-4 bg-opacity-70 hover:bg-opacity-90 
+            <Link to="/create" className="top-4 left-4 bg-white border-white border-4 bg-opacity-70 hover:bg-opacity-90 
                     text-gray-800 font-semibold text-center text-2xl w-1/3 py-2 px-4 rounded shadow">
                     NEW CHAT
             </Link>
