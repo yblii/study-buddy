@@ -2,9 +2,8 @@ import dtl from '../../assets/ducks/duck_thinking.png';
 import dtr from '../../assets/ducks/duck_thinking_right.png';
 import dcl from '../../assets/ducks/duck_confused_left.png';
 import dcr from '../../assets/ducks/duck_confused_right.png';
-import React from 'react';
 
-export function RandomDuck({ duckIndex, duckName }) {
+export function RandomDuck({ duckName }) {
     const ducks = [dtl, dtr, dcl, dcr];
     const randomDuck = ducks[Math.floor(Math.random() * ducks.length)];
 

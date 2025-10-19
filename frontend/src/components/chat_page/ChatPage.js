@@ -1,25 +1,20 @@
 import { ChatWindow } from "./ChatWindow";
 import { Link, useLocation } from "react-router-dom";
-import React, {useState} from "react";
+import {useState} from "react";
 import { RandomDuck } from "./RandomDuck";
 
 export function ChatPage() { 
-    const [chatHistory, setChatHistory] = React.useState();
-    const [duckIndex, setDuckIndex] = useState(0); 
+    const [chatHistory, setChatHistory] = useState();
 
     const location = useLocation();
     const passedDuck = location.state.name || "Ducky";
     const topic = location.state.topic;
     const educationLevel = location.state.educationLevel;
 
-    const handleDuckChange = () => {
-        setDuckIndex(Math.floor(Math.random() * 4));
-    };
-
     return (
         <div className="h-screen w-screen flex justify-between p-20 gap-20">
             <div className="flex-3"> 
-                <RandomDuck duckIndex={duckIndex} duckName={passedDuck} />
+                <RandomDuck duckName={passedDuck} />
             </div>
             <div className="flex-1">
                 <ChatWindow setHistory={setChatHistory} name={passedDuck} topic={topic} educationLevel={educationLevel} />

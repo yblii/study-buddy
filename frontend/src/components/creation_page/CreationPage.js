@@ -31,10 +31,11 @@ export function CreationPage() {
   }
 
   return (
-    <div className="h-screen w-screen grid grid-flow grid-cols-2 items-end justify-items-stretch p-20">
-        <div className="p-20 flex flex-col items-center justify-center gap-6">
+    <div className="h-screen w-screen flex justify-between p-20">
+        <div className="p-20 flex-1 flex flex-col items-center justify-center gap-6">
             <Ducky name=""/>
             <input
+                className="w-4/5"
                 type="text"
                 placeholder="Name your ducky."
                 value={formData.name}
@@ -42,8 +43,7 @@ export function CreationPage() {
                 onChange={handleInputChange}
             />
         </div>
-        <div className="bg-secondary h-full p-6 rounded-lg flex flex-col justify-between gap-3 z-10
-                ring-bcolor ring-8 shadow-xl">
+        <div className="bg-secondary flex-1 h-full p-6 rounded-lg flex flex-col justify-between gap-3 ring-bcolor ring-8 shadow-xl">
             <form onSubmit={handleSubmit}>
                 <div className="form-section">
                     <label htmlFor="topic">TOPIC</label>
