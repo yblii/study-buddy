@@ -13,17 +13,26 @@ export function ChatWindow() {
 
         const newMsg = { 
             role: "user", 
-            parts: [msg],
+            text: msg,
             id: Date.now() 
         };
         setMessages(messages => [...messages, newMsg]);
 
         try {
-            const resp = await axios.post("http://localhost:5000/api/chat", { message: msg });
+            const resp = await axios.post("http://localhost:5000/api/chat", 
+                { 
+                    chatHistory: messages.map(m => (
+                        { 
+                            role: m.role, 
+                            parts: [{ text: m.text }]
+                        }
+                    )),
+                    userMessage: msg
+                });
             
             const botMsg = { 
-                role: "bot", 
-                parts: [resp.data.message],
+                role: "model", 
+                text: resp.data.message,
                 id: Date.now() + 1 
             };
             setMessages(messages => [...messages, botMsg]);
@@ -35,7 +44,7 @@ export function ChatWindow() {
     }
 
     return (
-        <div className="bg-secondary p-6 h-5/6 w-2/5 rounded-lg flex flex-col justify-between gap-3">
+        <div className="bg-secondary p-6 h-5/6 w-2/5 rounded-lg flex flex-col justify-between gap-3 z-10">
             <MessageList messages={messages} isThinking={isThinking}/>
             <ChatInput sendMsg={sendMsg} />
         </div>

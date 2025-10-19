@@ -5,7 +5,7 @@ export function MessageList(props) {
     return (
         <div className="flex-col pb-3 w-full overflow-y-auto scrollbar scrollbar-thumb-primary scrollbar-track-secondary">
             {props.messages.map((msg) => (
-                <TextBubble text={msg.parts[0]} 
+                <TextBubble text={msg.text} 
                     isUser={msg.role === "user" ? true : false} 
                     key={msg.id} />
             ))}

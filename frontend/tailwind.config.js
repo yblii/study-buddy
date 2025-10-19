@@ -13,6 +13,9 @@ module.exports = {
         fontFamily: {
             'sans': ['Helvetica', 'Arial', 'sans-serif'],
         },
+        backgroundImage: {
+            'bg': "url('/src/assets/background.png')",
+        },
     },
   },
   plugins: [
