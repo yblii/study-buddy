@@ -9,7 +9,7 @@ module.exports = {
             'primary': '#4dbcb8ff',
             'secondary': '#faeb6dff',
             'textp': '#383535ff',
-            'bcolor': '#f7e37fff',
+            'bcolor': '#dfcd76ff',
         },
         fontFamily: {
             'sans': ['Helvetica', 'Arial', 'sans-serif'],
