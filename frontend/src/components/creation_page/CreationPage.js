@@ -1,6 +1,7 @@
 import {Ducky} from "./Ducky";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { CreateNewChat } from "./CreateNewChat";
 
 export function CreationPage() {
   const [formData, setFormData] = useState({
@@ -10,15 +11,20 @@ export function CreationPage() {
   });
 
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
+  
+  const handleSubmit =  async (e) => {
     e.preventDefault();
-    navigate('/chat', { 
-        state: { 
-            name: formData.name, 
-            topic: formData.topic, 
-            educationLevel: formData.educationLevel 
-        } 
-    });
+
+    try {
+        // Call the helper function to create the chat and first message
+        const newConversationId = await CreateNewChat(formData);
+        // Redirect the user to the new chat window
+        navigate(`/chat/${newConversationId}`);
+
+    } catch (error) {
+        console.error("Error creating new chat:", error);
+        alert("Failed to start chat. See console for details.");
+    }
   };
 
   const handleInputChange = (e) => {

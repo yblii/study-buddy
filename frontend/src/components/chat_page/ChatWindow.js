@@ -1,17 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChatInput } from "./ChatInput";
 import { MessageList } from "./MessageList";
 import axios from "axios";
 
-export function ChatWindow({ setHistory, name, topic, educationLevel }) {
-    const [messages, setMessages] = useState([
-        { 
-            role: "model", 
-            text: `Hi! I'm your study buddy ${name}, let's get started!`, 
-            id: 0 
-        },
-    ]);
+export function ChatWindow({ setHistory, topic, educationLevel, chatLog }) {
+    const [messages, setMessages] = useState([]);
     const [isThinking, setThinking] = useState(false);
+
+    useEffect(() => {
+        setMessages(chatLog);
+    }, [chatLog]);
 
     const sendMsg = async (msg) => {
         setThinking(true);
