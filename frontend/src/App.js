@@ -6,6 +6,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import { SignUpPage } from './components/authentication/SignUpPage';
 import { LoginPage } from './components/authentication/LoginPage';
 import { HomePage } from './components/home_page/HomePage';
+import { ExplanationsPage } from './components/analytics_page/OtherExplanations';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                     <Route path='/analytics' element={<AnalyticsPage />} />
                     <Route path='/create' element={<CreationPage />}/>
                     <Route path='/home' element={<HomePage />}/>
+                    <Route path='/community' element={<ExplanationsPage />}/>
                 </Routes>
             </HashRouter>
         </div>

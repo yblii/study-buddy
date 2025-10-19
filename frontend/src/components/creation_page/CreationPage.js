@@ -10,7 +10,7 @@ export function CreationPage() {
   const [formData, setFormData] = useState({
     name: "",
     topic: "",
-    educationLevel: "middle",
+    educationLevel: "",
   });
 
   const navigate = useNavigate();

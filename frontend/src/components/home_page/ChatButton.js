@@ -8,8 +8,8 @@ export function ChatButton({ chatData }) {
 
     const parseLevel = (num) => {
         if(num === 0) return "Middle School";
-        if(num === 0) return "High School";
-        if(num === 0) return "Undergraduate";
+        if(num === 1) return "High School";
+        if(num === 2) return "Undergraduate";
         return "Middle School";
     }
 

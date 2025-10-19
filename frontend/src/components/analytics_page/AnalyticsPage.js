@@ -52,13 +52,13 @@ export function AnalyticsPage() {
                 analytics ? (
                     <div className="grid grid-cols-2 grid-rows-6 gap-4 p-6 col-span-3">
                         <AnalyticBlock title="OVERALL UNDERSTANDING" content={analytics.understanding_percentage + "%"}
-                            classes="col-span-2" />
+                            classes="col-span-2 ring-bcolor ring-4" />
                         <AnalyticListBlock title="UNDERSTOOD CONCEPTS" content={analytics.understood_concepts}
-                            classes="col-span-2 row-span-2" />
+                            classes="col-span-2 row-span-2 ring-bcolor ring-4" />
                         <AnalyticListBlock title="UNCERTAIN CONCEPTS" content={analytics.uncertain_concepts} 
-                            classes="row-span-2 row-span-3" />
+                            classes="row-span-2 row-span-3 ring-bcolor ring-4" />
                         <AnalyticListBlock title="INCORRECT CONCEPTS" content={analytics.incorrect_concepts} 
-                            classes="row-span-2 row-span-3" />
+                            classes="row-span-2 row-span-3 ring-bcolor ring-4" />
                     </div>
 
                 ) : (
@@ -66,13 +66,15 @@ export function AnalyticsPage() {
                 )
             )}
                 </div>
-
             </div>
-            
-                <Link to="/home" className="bottom-10 left-25 bg-white border-white absolute border-4 bg-opacity-70 hover:bg-opacity-90 
-                        text-gray-800 font-semibold text-center text-2xl w-1/4 py-2 px-4 rounded shadow">
-                        RETURN HOME
-                </Link>
+            <Link to="/home" className="bottom-10 left-25 bg-white border-white absolute border-4 bg-opacity-70 hover:bg-opacity-90 
+                text-gray-800 font-semibold text-center text-2xl w-1/4 py-2 px-4 rounded shadow">
+                RETURN HOME
+            </Link>
+            <Link to="/community" className="top-10 right-22 bg-white border-white absolute border-4 bg-opacity-70 hover:bg-opacity-90 
+                text-gray-800 font-semibold text-center text-2xl w-1/3 py-2 px-4 rounded shadow">
+                COMMUNITY EXPLANATIONS
+            </Link>
         </div>
     );
 }
