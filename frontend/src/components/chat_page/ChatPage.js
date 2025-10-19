@@ -82,7 +82,7 @@ export function ChatPage() {
                 <div>Loading Conversation...</div>
             )}
 
-            <button onClick={endChat} className="absolute">
+            <button onClick={endChat} className="absolute top-4 right-4">
                 Finish Chat
             </button>
 

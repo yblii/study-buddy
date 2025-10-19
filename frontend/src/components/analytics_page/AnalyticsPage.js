@@ -44,8 +44,8 @@ export function AnalyticsPage() {
                 <AnalyticsDucky />
             </div>
             
-            <div className="flex-1">
-                <div className="h-full p-6 flex flex-col justify-between gap-3 z-10">
+            <div className="flex-1 overflow-y-auto">
+                <div className="min-h-full p-6 flex flex-col justify-between gap-3 z-10">
                     {isLoading ? (
                 <p>Loading analytics...</p>
             ) : (
