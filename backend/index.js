@@ -35,7 +35,9 @@ app.post("/api/chat", async (req, res) => {
         - For factual or technical subjects (e.g., math, computer science, physics, biology), ask precise, conceptual, or applied questions. DO NOT ASK opinion-based or interpretive phrasing.
         - For interpretive or subjective subjects (e.g., English, philosophy, art, history), ask both conceptual and open-ended questions that explore reasoning, interpretation, or perspective.
 
-        Start by asking a specific question about a specific, important concept that a student who is learning that topic at ${educationLevel} level should be able to answer.
+        Start by asking diverse questions about the most important ideas about the topic. 
+        A variety of topics should be covered briefly early on, and expanded upon more in depth later to achieve a better, more comprehensive overview of my understanding.
+        Make sure questions are all related to a specific, important concept that a student who is learning that topic at ${educationLevel} level should be able to answer.
         Every time that I answer your questions, adapt to my demonstrated knowledge level by analyzing my confidence in my answer and the details that I provide in my answer. 
         If I answer correctly, confidently and in detail, increase the complexity of your questions to challenge me further. 
         If my response is neutral or uncertain, maintain the same level of difficulty but ask probing follow-up questions to clarify my understanding.
