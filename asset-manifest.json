@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/study-buddy/static/css/main.4afdc133.css",
-    "main.js": "/study-buddy/static/js/main.268f76eb.js",
-    "static/js/453.d7446e4a.chunk.js": "/study-buddy/static/js/453.d7446e4a.chunk.js",
-    "static/media/duck_thinking_right.png": "/study-buddy/static/media/duck_thinking_right.5faa528a80be47491a22.png",
-    "static/media/duck_thinking.png": "/study-buddy/static/media/duck_thinking.95ac134887b99f3ba67d.png",
-    "static/media/duck_end.png": "/study-buddy/static/media/duck_end.37f93486fdfff1ad7f05.png",
-    "static/media/duck_base.png": "/study-buddy/static/media/duck_base.0d6c8d501fcb59cafafb.png",
-    "static/media/duck_confused_left.png": "/study-buddy/static/media/duck_confused_left.defb260304eac209c9a1.png",
-    "static/media/duck_confused_right.png": "/study-buddy/static/media/duck_confused_right.8ff08e9f5413539e04ed.png",
-    "static/media/duck_icon.png": "/study-buddy/static/media/duck_icon.6944992bea240edade57.png",
-    "index.html": "/study-buddy/index.html",
-    "main.4afdc133.css.map": "/study-buddy/static/css/main.4afdc133.css.map",
-    "main.268f76eb.js.map": "/study-buddy/static/js/main.268f76eb.js.map",
-    "453.d7446e4a.chunk.js.map": "/study-buddy/static/js/453.d7446e4a.chunk.js.map"
+    "main.css": "/static/css/main.4afdc133.css",
+    "main.js": "/static/js/main.098ada7d.js",
+    "static/js/453.d7446e4a.chunk.js": "/static/js/453.d7446e4a.chunk.js",
+    "static/media/duck_thinking_right.png": "/static/media/duck_thinking_right.5faa528a80be47491a22.png",
+    "static/media/duck_thinking.png": "/static/media/duck_thinking.95ac134887b99f3ba67d.png",
+    "static/media/duck_end.png": "/static/media/duck_end.37f93486fdfff1ad7f05.png",
+    "static/media/duck_base.png": "/static/media/duck_base.0d6c8d501fcb59cafafb.png",
+    "static/media/duck_confused_left.png": "/static/media/duck_confused_left.defb260304eac209c9a1.png",
+    "static/media/duck_confused_right.png": "/static/media/duck_confused_right.8ff08e9f5413539e04ed.png",
+    "static/media/duck_icon.png": "/static/media/duck_icon.6944992bea240edade57.png",
+    "index.html": "/index.html",
+    "main.4afdc133.css.map": "/static/css/main.4afdc133.css.map",
+    "main.098ada7d.js.map": "/static/js/main.098ada7d.js.map",
+    "453.d7446e4a.chunk.js.map": "/static/js/453.d7446e4a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4afdc133.css",
-    "static/js/main.268f76eb.js"
+    "static/js/main.098ada7d.js"
   ]
 }
