@@ -11,10 +11,10 @@
 }
 
 button {
-    @apply p-2 rounded-lg bg-primary border-4 border-black/20 font-bold text-white;
+    @apply p-2 rounded-lg bg-primary border-4 border-black/20 font-bold text-white hover:bg-primaryShadow;
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"], input[type="password"] {
     @apply p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary;
 }
 

@@ -1,5 +1,5 @@
 import { ChatWindow } from "./ChatWindow";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { db } from "../../firebase/firebase";
 import { collection, query, orderBy, getDocs, doc, getDoc } from "firebase/firestore";
@@ -82,14 +82,9 @@ export function ChatPage() {
                 <div>Loading Conversation...</div>
             )}
 
-            <button onClick={endChat} className="absolute top-4 right-4">
-                Finish Chat
+            <button onClick={endChat} className="absolute top-4 right-20 p-2">
+                END CHAT SESSION
             </button>
-
-            <Link to="/" className="absolute top-4 left-4 bg-white bg-opacity-70 hover:bg-opacity-90 
-                text-gray-800 font-semibold py-2 px-4 rounded shadow">
-                New
-            </Link>
         </div>
     );
 }

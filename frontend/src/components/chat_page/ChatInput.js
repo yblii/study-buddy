@@ -25,8 +25,8 @@ export function ChatInput(props) {
                 onKeyDown={handleKeyPress}
                 onSubmit={handleSubmit}>
             </input>
-            <button className="p-2 rounded bg-primary border-2 border-black/20" onClick={handleSubmit}>
-                <LuSend color="white" className="text-2xl stroke-600" />
+            <button className="p-2 rounded-lg bg-primary border-4 border-black/20" onClick={handleSubmit}>
+                <LuSend className="text-2xl stroke-600" color="white" />
             </button>
         </div>
     )

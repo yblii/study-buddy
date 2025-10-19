@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { AnalyticBlock } from "./AnalyticBlock";
 import { AnalyticListBlock } from "./AnalyticListBlock";
 import { AnalyticsDucky } from "./AnalyticsDucky";
@@ -44,10 +44,11 @@ export function AnalyticsPage() {
                 <AnalyticsDucky />
             </div>
             
-            <div className="flex-1 overflow-y-auto">
+            <div className="flex-1 scrollbar overflow-y-auto 
+                scrollbar-thumb-secondary scrollbar-track-primary">
                 <div className="min-h-full p-6 flex flex-col justify-between gap-3 z-10">
                     {isLoading ? (
-                <p>Loading analytics...</p>
+                <h1 className="text-3xl font-bold text-center pt-20">Loading analytics...</h1>
             ) : (
                 analytics ? (
                     <div className="grid grid-cols-2 grid-rows-6 gap-4 p-6 col-span-3">
@@ -62,14 +63,17 @@ export function AnalyticsPage() {
                     </div>
 
                 ) : (
-                    <p>No analytics data available.</p>
+                    <h1>No analytics data available.</h1>
                 )
             )}
                 </div>
 
-                
             </div>
             
+                <Link to="/home" className="bottom-10 left-25 bg-white border-white absolute border-4 bg-opacity-70 hover:bg-opacity-90 
+                        text-gray-800 font-semibold text-center text-2xl w-1/4 py-2 px-4 rounded shadow">
+                        RETURN HOME
+                </Link>
         </div>
     );
 }

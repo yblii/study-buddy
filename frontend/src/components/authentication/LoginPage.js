@@ -32,9 +32,9 @@ export function LoginPage() {
 
     return (
         <div className = "flex items-center justify-center min-h-screen">
-            <div className="bg-secondary p-6 rounded-lg gap-3 ring-bcolor ring-8 shadow-xl flex flex-col items-center z-10">
+            <div className="bg-secondary p-12 rounded-lg gap-3 ring-bcolor ring-8 shadow-xl flex flex-col items-center z-10">
                 <form onSubmit={handleSubmit}>
-                    <h1>LOGIN</h1>
+                    <h1 className="text-3xl font-extrabold text-textsec mb-6">LOGIN</h1>
                     <div className="form-section">
                         <input required type="email" placeholder="email@example.com" id="email" name="email" onChange={handleInputChange}></input>
                     </div>
@@ -43,11 +43,11 @@ export function LoginPage() {
                         <input required type="password" placeholder="password" id="password" name="password" onChange={handleInputChange}></input>
                     </div>
 
-                    <button type="submit">
-                        CREATE ACCOUNT
+                    <button type="submit" className="w-full">
+                        LOGIN
                     </button>
                 </form>
-                <Link to='/signup'>Sign Up</Link>
+                <Link className="text-left w-full text-textp font-bold" to='/signup'>Sign Up</Link>
             </div>
                 
         </div>

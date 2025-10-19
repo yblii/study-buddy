@@ -17,7 +17,7 @@ export function RandomDuck({ duckName }) {
         />
       </div>
       {duckName && (
-      <p className="mt-2 text-lg font-semibold text-gray-800 p-4 rounded-lg bg-white">
+      <p className="mt-2 text-2xl font-semibold text-textsec p-4 rounded-lg bg-white">
        {duckName}
       </p>
     )}

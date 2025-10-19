@@ -25,7 +25,7 @@ export const CreateNewChat = async (formData, uid) => {
 
     await addDoc(collection(db, 'ducks', newChatId, 'messages'), {
         role: 'user',
-        text: "hello",
+        text: `Hi ${chatData.name}, let's talk about ${chatData.topic}`,
         timestamp: Date.now(),
     });
 

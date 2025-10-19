@@ -10,7 +10,8 @@ module.exports = {
             'secondary': '#faeb6dff',
             'textp': '#383535ff',
             'textsec': '#514949ff',
-            'bcolor': '#dfcd76ff',
+            'primaryShadow': '#48b2aeff',
+            'bcolor': '#ecca6cff',
         },
         fontFamily: {
             'sans': ['Helvetica', 'Arial', 'sans-serif'],
