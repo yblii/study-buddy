@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.analytic-block {
+    @apply bg-secondary p-4 rounded-lg text-lg;
+}
+
+.analytic-block ul {
+    @apply list-disc list-outside ml-5;
+}
