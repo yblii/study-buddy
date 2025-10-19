@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { AnalyticBlock } from "./AnalyticBlock";
 import { AnalyticListBlock } from "./AnalyticListBlock";
+import { AnalyticsDucky } from "./AnalyticsDucky";
 
 export function AnalyticsPage() {
     const location = useLocation();
@@ -38,8 +39,8 @@ export function AnalyticsPage() {
 
     return (
         <div className="analytics-page grid grid-cols-5">
-            <div className="duck-image-container col-span-2">
-
+            <div className="col-span-2 h-full flex justify-center items-center">
+                <AnalyticsDucky />
             </div>
             {isLoading ? (
                 <p>Loading analytics...</p>
