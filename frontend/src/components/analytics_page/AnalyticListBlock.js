@@ -1,7 +1,7 @@
-export function AnalyticListBlock({ title, content })  {
+export function AnalyticListBlock({ title, content, classes })  {
     return (
-        <div>
-            <h1>{title}</h1>
+        <div className={classes + " analytic-block"}>
+            <h1 className="text-lg font-bold">{title}</h1>
             <ul>
                 {content.map((item, index) => (
                     <li key={index}>{item}</li>

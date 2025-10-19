@@ -45,7 +45,8 @@ export function ChatWindow({ setHistory }) {
     }
 
     return (
-        <div className="bg-secondary p-6 h-5/6 w-2/5 rounded-lg flex flex-col justify-between gap-3 z-10">
+        <div className="bg-secondary p-6 h-5/6 rounded-lg flex flex-col justify-between gap-3 z-10
+                ring-white ring-8 shadow-xl">
             <MessageList messages={messages} isThinking={isThinking}/>
             <ChatInput sendMsg={sendMsg} />
         </div>

@@ -18,7 +18,7 @@ export function ChatInput(props) {
                 onChange={(e) => setInput(e.target.value)}
                 onSubmit={handleSubmit}>
             </input>
-            <button className="p-2 rounded bg-primary" onClick={handleSubmit}>
+            <button className="p-2 rounded bg-primary border-2 border-black/20" onClick={handleSubmit}>
                 <LuSend color="white" className="text-2xl stroke-600" />
             </button>
         </div>
