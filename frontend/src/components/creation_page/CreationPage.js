@@ -11,7 +11,7 @@ export function CreationPage() {
   };
 
   return (
-    <div className="bg-bg bg-repeat bg-contain h-screen flex flex-col items-center justify-center bg-gray-50 p-4">
+    <div className="h-screen flex flex-col items-center justify-center p-4">
       <Ducky name=""/>
       <NameInputBox onSubmit={handleNameSubmit} />
     </div>
