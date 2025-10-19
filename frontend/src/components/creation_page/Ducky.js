@@ -10,7 +10,7 @@ export function Ducky ({name}) {
         className="w-80 h-80 object-cover"
       />
       {name != "" && (
-        <p className="mt-2 text-lg font-semibold text-gray-800 p-4 rounded-lg" >
+        <p className="mt-2 text-lg font-semibold text-gray-800 p-4 rounded-lg bg-white" >
           {name}
         </p>
       )}
