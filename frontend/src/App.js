@@ -3,6 +3,9 @@ import { ChatPage } from './components/chat_page/ChatPage';
 import { CreationPage } from './components/creation_page/CreationPage'
 import { AnalyticsPage } from './components/analytics_page/AnalyticsPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { SignUpPage } from './components/authentication/SignUpPage';
+import { LoginPage } from './components/authentication/LoginPage';
+import { HomePage } from './components/home_page/HomePage';
 
 function App() {
     return (
@@ -10,8 +13,11 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path='/chat/:chatId' element={<ChatPage />} />
+                    <Route path='/signup' element={<SignUpPage />} />
+                    <Route path='/login' element={<LoginPage />} />
                     <Route path='/analytics' element={<AnalyticsPage />} />
                     <Route path='/' element={<CreationPage />}/>
+                    <Route path='/home' element={<HomePage />}/>
                 </Routes>
             </BrowserRouter>
         </div>

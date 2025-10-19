@@ -2,8 +2,11 @@ import {Ducky} from "./Ducky";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { CreateNewChat } from "./CreateNewChat";
+import { useAuth } from "../authentication/AuthContext";
 
 export function CreationPage() {
+  const { currentUser } = useAuth();
+
   const [formData, setFormData] = useState({
     name: "",
     topic: "",
@@ -17,7 +20,7 @@ export function CreationPage() {
 
     try {
         // Call the helper function to create the chat and first message
-        const newConversationId = await CreateNewChat(formData);
+        const newConversationId = await CreateNewChat(formData, currentUser.uid);
         // Redirect the user to the new chat window
         navigate(`/chat/${newConversationId}`);
 

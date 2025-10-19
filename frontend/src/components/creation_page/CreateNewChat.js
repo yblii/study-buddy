@@ -1,7 +1,7 @@
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 
-export const CreateNewChat = async (formData) => {
+export const CreateNewChat = async (formData, uid) => {
 
     function parseEducationLevel(level) {
         if(level === "middle") return 0;
@@ -11,6 +11,7 @@ export const CreateNewChat = async (formData) => {
     };
 
     const chatData = {
+        user_id: uid,
         name: formData.name,
         topic: formData.topic,
         education_level: parseEducationLevel(formData.educationLevel),
